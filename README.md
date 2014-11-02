@@ -11,7 +11,7 @@ This piece of code was initially created in an another project to highlight keyw
 
 1. Add the **txtHighlighter.js** script in the footer section of your HTML document. *(It needs to run after the DOM is loaded)*
 	```html
-	// HTML
+	<!-- HTML -->
 
 	<script src="path_to_your_file/txtHighlither.js"></script>
 	
@@ -31,7 +31,7 @@ This piece of code was initially created in an another project to highlight keyw
 3. *Optionally*, you can also add in your markup and identify a custom search field. Identify it’s ID selector in the header section of **txtHighlighter.js**. If not, a default search field will appear on top of the page.
 
 	```hmtl
-	// HTML
+	<!-- HTML -->
 
 	<input id="custom-search-field" class="custom-search-field" type="text" name="search" placeholder="Custom Search Field" tabindex="1"/>
 
