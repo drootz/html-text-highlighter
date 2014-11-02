@@ -1,0 +1,16 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Daniel Racine -- LEARNING JS -- idaniel.racine@gmail.com
+
+# THANKS
+
+    Eloquent JavaScript -- http://eloquentjavascript.net
+    MDN -- https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3, JAVASCRIPT
+
