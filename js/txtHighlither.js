@@ -5,9 +5,9 @@
     /**
     * Identify the ID selector of the targeted content here: (default is 'target') :
     */
-    var targetID = 'target';
+    var targetID = "target";
     
-
+    
 
 /************************************************************************************
 ***                     OPTIONAL USER SETTINGS                                    ***
@@ -16,7 +16,7 @@
     /**
     * Identify the ID selector of the search field here: (default is 'input-field-default') :
     */
-    var inputID = 'search-field';
+    var inputID = "search-field"; 
 
 
 
@@ -29,7 +29,7 @@
     * global variables used only on page load. (REF FUNCTIONS)
     */
     var targetInitialHTML; // Used with checkSearchContent(); + mainHighlight();
-    var targetContentCheck = 0; // Used with checkSearchContent();
+    var targetContentCheck = 0; // Used with checkSearchContent(); 
     
  
 
@@ -81,7 +81,7 @@
     *   - Define the opening and ending markup tags of the highlighted items
     *     ** Could improve markup by injecting CSS instead of hard define it inline.
     */
-    var highlightClass = 'highlightjs',
+    var highlightClass = "highlightjs",
         highlightRe = new RegExp(highlightClass,"ig"),
         spaceRe = /\s+/,
         spaceRe2 = /\s+$/,
