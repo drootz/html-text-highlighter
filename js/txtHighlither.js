@@ -5,7 +5,7 @@
     /**
     * Identify the ID selector of the targeted content here: (default is 'target') :
     */
-    var targetID = 'target';
+    var targetID = "target";
     
 
 
@@ -16,7 +16,7 @@
     /**
     * Identify the ID selector of the search field here: (default is 'input-field-default') :
     */
-    var inputID = 'search-field';
+    var inputID = "search-field";
 
 
 
@@ -81,7 +81,7 @@
     *   - Define the opening and ending markup tags of the highlighted items
     *     ** Could improve markup by injecting CSS instead of hard define it inline.
     */
-    var highlightClass = 'highlightjs',
+    var highlightClass = "highlightjs",
         highlightRe = new RegExp(highlightClass,"ig"),
         spaceRe = /\s+/,
         spaceRe2 = /\s+$/,
