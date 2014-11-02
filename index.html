@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>HTML Text Highlighter Demo</title>
+        <meta name="description" content="Text Highlighter Demo">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+
+        <style>
+
+            /**************************************************************\
+                USER CUSTOM SEARCH FIELD STYLE
+            \**************************************************************/
+
+            .search-field {
+                display: block;
+                width: 100%;
+                height: 40px;
+                padding: 0 10px;
+                border: 1px solid lightgrey;
+                border-radius: 5px;
+                outline:0;
+            }
+            @media only screen and (min-device-width : 700px) {
+                .search-field {
+                    width: inherit;
+                }
+            }
+
+        </style>
+
+        <style>   
+
+            /**************************************************************\
+                DEMO STYLE ONLY
+            \**************************************************************/
+
+            /**
+            * * { Box-sizing: Border-box } FTW
+            * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+            * apply a natural box layout model to all elements, but allowing components to change
+            */
+            
+            html { box-sizing: border-box; }
+
+            *, *:before, *:after { box-sizing: inherit; }
+
+
+
+            body { padding: 40px 0 0 0; }
+
+            input { 
+                font-size: 16px;
+                background: lightyellow;
+            }
+
+            p { 
+                line-height: 1.2em;
+            }
+
+            li { 
+                margin-top: 5px;
+                text-align: left;
+
+            }
+
+            hr { margin: 25px 0; }
+
+
+
+            .wrapper {
+                max-width: 1200px;
+                margin: auto;
+                padding: 0 10px;
+                font-family: sans-serif;
+                font-size: 16px;
+                text-align: center;
+
+            }
+            @media only screen and (min-device-width : 700px) {
+                .wrapper {
+                    padding: 0 20px;
+                    text-align: left;
+                }
+            }
+
+            .table {
+                border-color: #d1d1d1;
+                text-align: center;
+            }
+
+            .table th,
+            .table td {
+                width: 500px;
+                padding: 10px 5px;
+            }
+
+            .target {
+                background: aliceblue;
+                padding: 20px;
+                margin: 25px 0 50px;
+                border-radius: 10px;
+            }
+
+            @media screen and (min-width: 700px) {
+              
+                .target {
+                    padding: 50px 100px;
+                }  
+
+            }
+
+            .option-title {
+                width: 100%;
+                height: 30px;
+                margin: 1em 0;
+                line-height: 30px;
+                float: left;
+            }
+            @media only screen and (min-device-width : 700px) {
+                .option-title {
+                    width: auto;
+                }
+            }
+
+            .switch-wrap {
+                position: relative;
+                width: 100%;
+                height: 30px;
+                margin: 1em 0;
+                float: left;
+            }
+            @media only screen and (min-device-width : 700px) {
+                .switch-wrap {
+                    width: 185px;
+                }
+            }
+          
+            .switch {
+                border: none;
+                position: absolute;
+                top: 0;
+                width: 55px;
+                height: 30px;
+                left: -27.5px; margin-left: 50%;
+                border-radius: 15px;
+                box-shadow: 0px 0px 0px 1px lightgrey;
+                background: transparent;
+                color: lightgrey;
+                -webkit-transition: all 0.2s ease;
+                   -moz-transition: all 0.2s ease;
+                    -ms-transition: all 0.2s ease;
+                     -o-transition: all 0.2s ease;
+                        transition: all 0.2s ease;
+                }
+                .switch:before {
+                    content: 'OFF';
+                    position: absolute;
+                    width: 35px;
+                    height: 30px;
+                    top: 0;
+                    left: -45px;
+                    line-height: 30px;
+                    text-align: right;
+                }
+                .switch:after {
+                    content: 'ON';
+                    position: absolute;
+                    width: 35px;
+                    height: 30px;
+                    top: 0;
+                    right: -45px;
+                    line-height: 30px;
+                    text-align: left;
+                }
+                .switch.activeColr {
+                    background: #4CD964;
+                    box-shadow: 0px 0px 0px 1px #4CD964;
+                    -webkit-transition: all 0.2s ease;
+                       -moz-transition: all 0.2s ease;
+                        -ms-transition: all 0.2s ease;
+                         -o-transition: all 0.2s ease;
+                            transition: all 0.2s ease;
+                }
+
+            .gitHub {
+                position: absolute;
+                width: 75px;
+                height: 75px;
+                top: 0; 
+                right: 0; 
+                border: 0;
+            }
+
+            @media screen and (min-width: 700px) {
+                
+                .gitHub {
+                    width: 149px;
+                    height: 149px;
+                }
+
+            }
+
+            .btn {
+                display: block;
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                top: 0px;
+                left: 0px;
+                border-radius: 15px;
+                background: white;
+                box-shadow: 0px 0px 0px 1px lightgrey,
+                            1px 4px 5px 1px grey;
+                -webkit-transition: all 0.2s ease;
+                   -moz-transition: all 0.2s ease;
+                    -ms-transition: all 0.2s ease;
+                     -o-transition: all 0.2s ease;
+                        transition: all 0.2s ease;
+
+                }
+                .btn.translateH {
+                    left: 25px !important;
+                    box-shadow: 0px 0px 0px 1px #4CD964,
+                                1px 4px 5px 1px grey;
+                    -webkit-transition: all 0.2s ease;
+                       -moz-transition: all 0.2s ease;
+                        -ms-transition: all 0.2s ease;
+                         -o-transition: all 0.2s ease;
+                            transition: all 0.2s ease;
+                }
+
+
+            /*
+             * HTML5 Boilerplate helper class
+             *
+             * Clearfix: contain floats
+             *
+             * For modern browsers
+             * 1. The space content is one way to avoid an Opera bug when the
+             *    `contenteditable` attribute is included anywhere else in the document.
+             *    Otherwise it causes space to appear at the top and bottom of elements
+             *    that receive the `clearfix` class.
+             * 2. The use of `table` rather than `block` is only necessary if using
+             *    `:before` to contain the top-margins of child elements.
+             */
+
+            .clearfix:before,
+            .clearfix:after {
+                content: " "; /* 1 */
+                display: table; /* 2 */
+            }
+
+            .clearfix:after {
+                clear: both;
+            }
+
+
+            /*
+             * HTML5 Boilerplate helper class
+             *
+             * Hide visually and from screenreaders, but maintain layout
+             */
+
+            .invisible {
+                visibility: hidden;
+            }
+     
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="wrapper">
+
+        <h1>HTML Text Highlighter Demo</h1>
+        
+        <div class="clearfix">
+            <span class="option-title">Toggle the 'default' search field</span>
+            <div class="switch-wrap">
+                <button id="switch" class="switch">
+                    <div id="btn" class="btn"></div>
+                </button>
+            </div>
+        </div>
+        
+        <p>Write a keyword (search string) in the search field to highlight text in the blue section and tab through the highlighted items!</p>
+       
+        <hr />
+
+        <input id="search-field" class="search-field" type="text" name="search" placeholder="Custom Search Field" tabindex="1"/>
+
+        <div id="target" class="target">
+            <h1 id="html-text-highlighter">HTML Text Highlighter</h1>
+
+            <p>This script highlight keywords in HTML web applications or sites. It was developed and is best used with small to medium size chunk of HTML text content. The highlighted items can then be tabbed through.</p>
+
+            <p>This piece of code was initially created in an another project to highlight keywords in AJAX search results. This script does not pretend to be perfect, please contribute if you feel something is wrong.</p>
+
+            <ul>
+            <li><a href="http://idannniel.github.io/html-text-highlighter/">HTML Text Highlighter Demo</a></li>
+            </ul>
+
+
+            <h2 id="quick-start">Quick start</h2>
+
+            <ol>
+            <li>Add the <strong>txtHighlighter.js</strong> script in the footer section of your HTML document. <em>(It needs to run after the DOM is loaded)</em></li>
+            
+
+            <!--
+            <pre><code>&lt;!-- HTML --&gt;
+
+            &lt;script src=&quot;path_to_your_file/txtHighlither.js&quot;&gt;&lt;/script&gt;
+
+            </code></pre>
+            -->
+
+
+            
+            <li>In the header section of <strong>txtHighlighter.js</strong> file, identify the ID selector corresponding to the text content you want to highlight and save.</li>
+            
+
+            <!--
+            <pre><code>// JS
+
+            var targetID = &quot;target&quot;;
+
+            </code></pre>
+            -->
+
+
+            
+            <li><em>Optionally</em>, you can also add in your markup and identify a custom search field. Identify it’s ID selector in the header section of <strong>txtHighlighter.js</strong>. If not, a default search field will appear on top of the page.</li>
+            </ol>
+
+            <!--
+            <pre><code>&lt;!-- HTML --&gt;
+
+            &lt;input id=&quot;custom-search-field&quot; class=&quot;custom-search-field&quot; type=&quot;text&quot; name=&quot;search&quot; placeholder=&quot;Custom Search Field&quot; tabindex=&quot;1&quot;/&gt;
+
+            </code></pre>
+            -->
+
+
+
+            <!--
+            <pre><code>// JS
+
+            var inputID = &quot;search-field&quot;;
+
+            </code></pre>
+            -->
+
+
+            <h2 id="features">Features</h2>
+
+            <ul>
+            <li>Small to Medium size HTML content text highlighting.</li>
+            <li>Instant text highlighting <em>onkeyup</em>.</li>
+            <li>Tab through the highlighted items.</li>
+            <li>No JS libraries dependencies.</li>
+            <li>Default search field functionality.</li>
+            </ul>
+
+
+            <h2 id="contributing">Contributing</h2>
+
+            <p>Anyone and everyone is welcome to <a href="humans.txt">contribute</a>.</p>
+
+            <blockquote><p><strong>Note</strong>: I know very little about Javascript. I just started to learn it couple weeks ago. I am always looking for constructive feedback learning buddies or opportunities! So far, thanks to <a href="http://eloquentjavascript.net">Eloquent JavaScript</a> and the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN - Mozilla Developer Network</a></p></blockquote>
+            <!-- ##END MARKED WRAPPER## -->
+
+
+            <br />
+            <hr />
+    
+            <table class="table" border="1">
+                <thead>
+                    <tr class="row">
+                        <th class="th">SPIRIT WITHOUT MORNING</th>
+                        <th class="th">IMAGE HAVE FOWL</th>
+                        <th class="th">EVENING VERY FLY</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="row">
+                        <td class="td">spirit without morning</td>
+                        <td class="td">image have fowl</td>
+                        <td class="td">evening very fly</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br /> 
+
+            <ul class="ul">
+                <li class="li">Spirit Without Morning</li>
+                <li class="li"><a href="http://idannniel.github.io/html-text-highlighter/">Image Have Fowl</a></li>
+                <li class="li"><i>Evening Very Fly</i></li>
+            </ul>
+            
+        </div>
+        
+        </div> <!-- END WRAP -->
+
+        <a href="https://github.com/idannniel/html-text-highlighter"><img id="gitHub" class="gitHub" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+
+
+
+
+        <script src="js/txtHighlighter-min.js"></script>
+        
+        <script>
+
+            /************************************************************************************
+            ***                     DEMO PAGE ONLY                                            ***
+            ************************************************************************************/
+
+
+            var button = document.getElementById('switch');
+
+            var btn = document.getElementById('btn');
+
+            var customField = document.getElementById(inputID);
+
+            var gitHub = document.getElementById('gitHub'); 
+
+
+            document.getElementById('switch').onclick = function() {
+
+                /**
+                * Turn ON the default field
+                */
+                if (btn.classList == "btn") {
+
+
+                    if (customField) {
+
+                        customField.value = '';
+                        customField.removeAttribute("id", inputID);
+                        customField.style.visibility = 'hidden';
+
+                    }
+
+                    window.scroll(0,0);
+                    gitHub.style.top = '40px';
+                    btn.classList.add('translateH');
+                    button.classList.add('activeColr');
+
+                /**
+                * Turn OFF the default field
+                */            
+                } else {
+
+                    var defaultField = document.getElementById('default-wrap');
+
+                    if (defaultField) {
+
+                        defaultField.value = '';
+                        var defaultParent = defaultField.parentNode;
+                        defaultParent.removeChild(defaultField);
+
+                    }
+
+                    customField.setAttribute("id", inputID);
+                    customField.style.visibility = 'visible';
+                    gitHub.style.top = '0';
+                    btn.classList.remove('translateH');
+                    button.classList.remove('activeColr');
+                    
+
+                }
+
+                document.getElementById(targetID).innerHTML = targetInitialHTML;
+                setup();
+                
+            }
+
+        </script>
+      
+    </body>
+
+</html>
