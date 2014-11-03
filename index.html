@@ -77,16 +77,14 @@
             .wrapper {
                 max-width: 1200px;
                 margin: auto;
-                padding: 0 10px;
+                padding: 0 5px;
                 font-family: sans-serif;
                 font-size: 16px;
-                text-align: center;
 
             }
             @media only screen and (min-device-width : 700px) {
                 .wrapper {
                     padding: 0 20px;
-                    text-align: left;
                 }
             }
 
@@ -103,7 +101,7 @@
 
             .target {
                 background: aliceblue;
-                padding: 20px;
+                padding: 20px 10px;
                 margin: 25px 0 50px;
                 border-radius: 10px;
             }
@@ -236,6 +234,35 @@
                             transition: all 0.2s ease;
                 }
 
+/* Code Styles */ 
+pre { 
+    white-space: pre-wrap; 
+    white-space: -moz-pre-wrap; 
+    white-space: -o-pre-wrap; 
+    word-wrap: break-word;
+    overflow: auto;
+    word-wrap: normal;
+    white-space: pre;
+} 
+
+code { 
+    font-family: Courier, 'New Courier', monospace; 
+    font-size: 12px;
+} 
+
+.code { 
+    border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    margin: 1em 0;
+} 
+
+.code { 
+    background-color: #FFFFFF; 
+    color: grey;
+} 
+
+- See more at: http://curiositalabs.com/2013/03/how-to-style-your-code-snippets/#sthash.sy6uLQyp.dpuf
 
             /*
              * HTML5 Boilerplate helper class
@@ -298,16 +325,20 @@
         <input id="search-field" class="search-field" type="text" name="search" placeholder="Custom Search Field" tabindex="1"/>
 
         <div id="target" class="target">
-            <h1 id="html-text-highlighter">HTML Text Highlighter</h1>
+
+            <h1 id="html-text-highlighter">README.md</h1>
 
             <p>This script highlight keywords in HTML web applications or sites. It was developed for and is best used with small to medium size length of HTML text content. The highlighted items can then be tabbed through.</p>
 
             <p>This piece of code was initially created in an another project to highlight keywords in AJAX search results. This script does not pretend to be perfect, please contribute if you feel something is wrong.</p>
 
+            <br />
+
             <ul>
             <li><a href="http://idannniel.github.io/html-text-highlighter/">HTML Text Highlighter Demo</a></li>
             </ul>
 
+            <br />
 
             <h2 id="quick-start">Quick start</h2>
 
@@ -315,50 +346,54 @@
             <li>Add the <strong>txtHighlighter.js</strong> script in the footer section of your HTML document. <em>(It needs to run after the DOM is loaded)</em></li>
             
 
-            <!--
-            <pre><code>&lt;!-- HTML --&gt;
+            <div class="code">
+            <pre><code>
+    &lt;!-- HTML --&gt;
 
-            &lt;script src=&quot;path_to_your_file/txtHighlither.js&quot;&gt;&lt;/script&gt;
-
+    &lt;script src=&quot;path_to_your_file/txtHighlither.js&quot;&gt;&lt;/script&gt;    
             </code></pre>
-            -->
+            </div>
+            
 
 
             
             <li>In the header section of <strong>txtHighlighter.js</strong> file, identify the ID selector corresponding to the text content you want to highlight and save.</li>
             
 
-            <!--
-            <pre><code>// JS
 
-            var targetID = &quot;target&quot;;
+            <div class="code">
+            <pre><code>
+    // JS
 
+    var targetID = &quot;target&quot;;
             </code></pre>
-            -->
+            </div>
 
 
             
             <li><em>Optionally</em>, you can also add in your markup and identify a custom search field. Identify its ID selector in the header section of <strong>txtHighlighter.js</strong>. If not, a default search field will appear on top of the page.</li>
+            
+
+            <div class="code">
+            <pre><code>
+    &lt;!-- HTML --&gt;
+
+    &lt;input id=&quot;custom-search-field&quot; class=&quot;custom-search-field&quot; type=&quot;text&quot; name=&quot;search&quot; placeholder=&quot;Custom Search Field&quot; tabindex=&quot;1&quot;/&gt;    
+            </code></pre>
+            </div>
+
+
+            <div class="code">
+            <pre><code>
+    // JS
+
+    var inputID = &quot;custom-search-field&quot;;  
+            </code></pre>
+            </div>
             </ol>
 
-            <!--
-            <pre><code>&lt;!-- HTML --&gt;
 
-            &lt;input id=&quot;custom-search-field&quot; class=&quot;custom-search-field&quot; type=&quot;text&quot; name=&quot;search&quot; placeholder=&quot;Custom Search Field&quot; tabindex=&quot;1&quot;/&gt;
-
-            </code></pre>
-            -->
-
-
-
-            <!--
-            <pre><code>// JS
-
-            var inputID = &quot;custom-search-field&quot;;
-
-            </code></pre>
-            -->
-
+            <br />
 
             <h2 id="features">Features</h2>
 
@@ -371,6 +406,8 @@
             </ul>
 
 
+            <br />
+
             <h2 id="contributing">Contributing</h2>
 
             <p>Anyone and everyone is welcome to <a href="humans.txt">contribute</a>.</p>
@@ -381,7 +418,11 @@
 
             <br />
             <hr />
-    
+            <br />
+
+
+            <h2 id="Table">Table Format Demo</h2>
+
             <table class="table" border="1">
                 <thead>
                     <tr class="row">
@@ -399,13 +440,7 @@
                 </tbody>
             </table>
 
-            <br /> 
 
-            <ul class="ul">
-                <li class="li">Spirit Without Morning</li>
-                <li class="li"><a href="http://idannniel.github.io/html-text-highlighter/">Image Have Fowl</a></li>
-                <li class="li"><i>Evening Very Fly</i></li>
-            </ul>
             
         </div>
         
