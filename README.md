@@ -18,7 +18,7 @@ This piece of code was initially created in an another project to highlight keyw
 	
 	```    
 
-2. In the header section of **txtHighlighter.js** file, identify the ID selector corresponding to the text content you want to highlight and save.
+2. In the header section of **txtHighlighter.js** file, identify the ID selector corresponding to the text content you want to highlight.
 	```js
 	// JS
 
